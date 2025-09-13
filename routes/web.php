@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MailController;
 use Illuminate\Foundation\Application;
@@ -79,6 +80,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ]);
 });
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('testimonials', TestimonialsController::class)->names([
+        'index' => 'testimonials.index',
+        'create' => 'testimonials.create',
+        'store' => 'testimonials.store',
+        'show' => 'testimonials.show',
+        'edit' => 'testimonials.edit',
+        'update' => 'testimonials.update',
+        'destroy' => 'testimonials.destroy'
+    ]);
+});
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/contact-form', [MailController::class, 'sendContactEmail'])->name('contact.submit');

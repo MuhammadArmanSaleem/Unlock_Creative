@@ -30,17 +30,20 @@ export default function AuthenticatedLayout({ header, children }) {
                                 {auth?.user?.role === 'admin' ? (
                                     <>
 
-                                        <NavLink href={route('services.index')} active={route().current('dashboard')} className="text-white hover:text-white/80 transition">
+                                        <NavLink href={route('services.index')} active={route().current('services.index')} className="text-white hover:text-white/80 transition">
                                             Services
                                         </NavLink>
-                                        <NavLink href={route('categories.index')} active={route().current('about')} className="text-white hover:text-white/80 transition">
+                                        <NavLink href={route('categories.index')} active={route().current('categories.index')} className="text-white hover:text-white/80 transition">
                                             Categories
                                         </NavLink>
-                                        <NavLink href={route('projects.index')} active={route().current('dashboard')} className="text-white hover:text-white/80 transition">
+                                        <NavLink href={route('projects.index')} active={route().current('projects.index')} className="text-white hover:text-white/80 transition">
                                             Projects
                                         </NavLink>
-                                        <NavLink href={route('chat.UserMessagesView')} active={route().current('UserMessagesView')} className="text-white hover:text-white/80 transition">
+                                        <NavLink href={route('chat.UserMessagesView')} active={route().current('chat.UserMessagesView')} className="text-white hover:text-white/80 transition">
                                             Messages
+                                        </NavLink>
+                                        <NavLink href={route('testimonials.index')} active={route().current('testimonials.index')} className="text-white hover:text-white/80 transition">
+                                            Testimonials
                                         </NavLink>
                                         
                                          <Dropdown>

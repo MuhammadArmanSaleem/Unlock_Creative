@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use App\Models\Categories;
 use App\Models\Services;
 use App\Models\Projects;
+use App\Models\Testimonials;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,7 @@ class HomeController extends Controller
         return Inertia::render('Home/About', [
             'services' => Services::all(),
             'categories' => Categories::all(),
+            'testimonials' => Testimonials::all()
         ]);
     }
 

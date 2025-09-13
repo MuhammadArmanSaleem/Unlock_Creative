@@ -94,16 +94,16 @@ export default function PoliciesSection() {
                     {Object.entries(policies).map(([key, policy]) => (
                         <div 
                             key={key}
-                            className={`bg-dark-3/70 border border-dark-4 rounded-xl p-6 hover:border-${policy.color} transition-all duration-300 group shadow-lg hover:shadow-xl hover:shadow-dark-4/20`}
+                            className={`bg-dark-3/70 border border-dark-4 rounded-xl p-6 hover:border-${policy.color} transition-all duration-1000 group shadow-lg hover:shadow-xl hover:shadow-dark-4/20`}
                         >
                             <div className="flex items-center gap-4 mb-4 cursor-pointer" onClick={() => togglePolicy(key)}>
-                                <div className={`bg-${policy.color}/20 group-hover:bg-${policy.color}/30 p-3 rounded-lg transition-all duration-300`}>
+                                <div className={`bg-${policy.color}/20 group-hover:bg-${policy.color}/30 p-3 rounded-lg transition-all duration-1000`}>
                                     {policy.icon}
                                 </div>
                                 <h3 className="text-2xl font-bold text-light-1 flex-grow">{policy.title}</h3>
                                 <svg 
                                     xmlns="http://www.w3.org/2000/svg" 
-                                    className={`h-6 w-6 text-${policy.color} transition-transform duration-300 ${expandedPolicy === key ? 'rotate-180' : ''}`}
+                                    className={`h-6 w-6 text-${policy.color} transition-transform duration-1000 ${expandedPolicy === key ? 'rotate-180' : ''}`}
                                     fill="none" 
                                     viewBox="0 0 24 24" 
                                     stroke="currentColor"
@@ -131,23 +131,6 @@ export default function PoliciesSection() {
                                     </div>
                                 )}
                                 
-                                <div className="flex justify-between items-center mt-6">
-                                    <Link 
-                                        href={`/${key}`} 
-                                        className="inline-block text-${policy.color} hover:text-light-1 font-medium transition-colors duration-300 flex items-center gap-1"
-                                    >
-                                        Read full policy document
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                        </svg>
-                                    </Link>
-                                    <button 
-                                        onClick={() => togglePolicy(key)}
-                                        className={`text-sm font-medium text-${policy.color} hover:text-light-1 transition-colors duration-300`}
-                                    >
-                                        {expandedPolicy === key ? 'Show Less' : 'Show More'}
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     ))}

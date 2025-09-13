@@ -22,7 +22,7 @@ const chunkArray = (arr, size) => {
         return acc;
     }, []);
 };
-export default function About({auth, services }) {
+export default function About({auth, services, testimonials }) {
     const { categories = [] } = usePage().props;
     const [chunkSize, setChunkSize] = useState(1);
     const user = auth?.user;
@@ -130,9 +130,7 @@ export default function About({auth, services }) {
 
                 <ProjectsSlider categories={categories} />
 
-                <ClientsSuccessStories aboutData={aboutData} />
-
-                <Testimonials aboutData={aboutData} />
+                <Testimonials testimonials={testimonials} />
 
                 <FAQs aboutData={aboutData} />
 
